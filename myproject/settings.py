@@ -125,7 +125,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add this at the end
 CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379/0')
-CELERY_RESULT_BACKEND = 'redis://redis:6379/1' # Use Docker if Redis isn't installed locally
+CELERY_RESULT_BACKEND = os.environ.get('REDIS_URL') # Use Docker if Redis isn't installed locally
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
