@@ -14,3 +14,4 @@ logs/
 # Django stuff
 *.sqlite3
 db.sqlite3
+.env
